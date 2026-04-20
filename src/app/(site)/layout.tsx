@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import "../css/euclid-circular-a-font.css";
-import "../css/style.css";
 import ClientProviders from "./ClientProviders";
 
 export const metadata: Metadata = {
@@ -34,18 +32,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function SiteLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="es" suppressHydrationWarning={true}>
-      <head>
-      </head>
-      <body suppressHydrationWarning={true}>
-        <ClientProviders>{children}</ClientProviders>
-      </body>
-    </html>
-  );
+  return <ClientProviders>{children}</ClientProviders>;
 }

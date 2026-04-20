@@ -60,7 +60,7 @@ const OrderSummary = () => {
             href="/checkout"
             className="w-full flex justify-center font-medium text-white bg-blue py-3 px-6 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5"
           >
-            Proceder al Pago
+            Ir a comprar
           </Link>
         </div>
       </div>

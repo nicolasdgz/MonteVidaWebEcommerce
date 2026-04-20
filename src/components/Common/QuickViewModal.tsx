@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useModalContext } from "@/app/context/QuickViewModalContext";
 import { AppDispatch, useAppSelector } from "@/redux/store";
 import { addItemToCart } from "@/redux/features/cart-slice";
-import { addItemToWishlist } from "@/redux/features/wishlist-slice";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import toast from "react-hot-toast";
@@ -41,17 +40,6 @@ const QuickViewModal = () => {
     );
     toast.success("Producto añadido al carrito");
     closeModal();
-  };
-
-  // add to wishlist
-  const handleAddToWishlist = () => {
-    dispatch(
-      addItemToWishlist({
-        ...product,
-        quantity: 1,
-      })
-    );
-    toast.success("Producto añadido a favoritos");
   };
 
   useEffect(() => {

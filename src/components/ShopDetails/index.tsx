@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Breadcrumb from "../Common/Breadcrumb";
 import Image from "next/image";
 import Newsletter from "../Common/Newsletter";
@@ -15,13 +15,8 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 const ShopDetails = ({ currentProduct }: { currentProduct?: Product }) => {
-  const [activeColor, setActiveColor] = useState("blue");
   const { openPreviewModal } = usePreviewSlider();
   const [previewImg, setPreviewImg] = useState(0);
-
-  const [storage, setStorage] = useState("gb128");
-  const [type, setType] = useState("active");
-  const [sim, setSim] = useState("dual");
   const [quantity, setQuantity] = useState(1);
 
   const [activeTab, setActiveTab] = useState("tabOne");
@@ -47,45 +42,6 @@ const ShopDetails = ({ currentProduct }: { currentProduct?: Product }) => {
     router.push("/checkout");
   };
 
-  const storages = [
-    {
-      id: "gb128",
-      title: "128 GB",
-    },
-    {
-      id: "gb256",
-      title: "256 GB",
-    },
-    {
-      id: "gb512",
-      title: "521 GB",
-    },
-  ];
-
-  const types = [
-    {
-      id: "active",
-      title: "Active",
-    },
-
-    {
-      id: "inactive",
-      title: "Inactive",
-    },
-  ];
-
-  const sims = [
-    {
-      id: "dual",
-      title: "Dual",
-    },
-
-    {
-      id: "e-sim",
-      title: "E Sim",
-    },
-  ];
-
   const tabs = [
     {
       id: "tabOne",
@@ -96,8 +52,6 @@ const ShopDetails = ({ currentProduct }: { currentProduct?: Product }) => {
       title: "Información Adicional",
     },
   ];
-
-  const colors = ["red", "blue", "orange", "pink", "purple"];
 
   const alreadyExist = localStorage.getItem("productDetails");
   const productFromStorage = useAppSelector(
@@ -228,16 +182,16 @@ const ShopDetails = ({ currentProduct }: { currentProduct?: Product }) => {
                     </div>
                   </div>
 
-                  <h3 className="font-medium text-custom-1 mb-4.5">
-                    <span className="text-sm sm:text-base text-dark">
-                      Precio: S/. {product.discountedPrice || product.price}
-                    </span>
-                    {product.discountedPrice && product.discountedPrice !== product.price && (
-                      <span className="line-through text-sm font-normal opacity-70 ml-2">
-                        S/. {product.price}
-                      </span>
-                    )}
-                  </h3>
+                  <div className="flex flex-col gap-1 mb-4.5">
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm text-dark-4">Precio Regular:</span>
+                      <span className="text-sm text-dark-4 line-through">S/. {product.price}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-semibold text-dark">Precio Promocional:</span>
+                      <span className="text-xl font-bold text-blue">S/. {product.discountedPrice || product.price}</span>
+                    </div>
+                  </div>
 
                   <ul className="flex flex-col gap-2">
                     <li className="flex items-center gap-2.5">

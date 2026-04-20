@@ -8,8 +8,8 @@ const Footer = () => {
     <footer className="overflow-hidden bg-blue">
       <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
         {/* <!-- footer menu start --> */}
-        <div className="flex flex-wrap xl:flex-nowrap gap-10 xl:gap-19 xl:justify-between pt-17.5 xl:pt-22.5 pb-10 xl:pb-15">
-          <div className="max-w-[330px] w-full text-white">
+        <div className="flex flex-wrap xl:flex-nowrap gap-10 xl:gap-19 xl:justify-center pt-17.5 xl:pt-22.5 pb-10 xl:pb-15">
+          <div className="max-w-[400px] w-full text-white">
             <h2 className="mb-7.5 text-custom-1 font-medium text-white">
               Ayuda & Soporte
             </h2>
@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
 
               <li>
-                <a href="#" className="flex items-center gap-4.5">
+                <a href="mailto:soporte@montevida.pe" className="flex items-center gap-4.5">
                   <svg
                     width="24"
                     height="24"
@@ -94,7 +94,7 @@ const Footer = () => {
             {/* <!-- Social Links start --> */}
             <div className="flex items-center gap-4 mt-7.5">
               <a
-                href="https://www.facebook.com/montevida.pe"
+                href="https://www.facebook.com/montevida.pe.suplementos"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook Social Link"
@@ -147,38 +147,27 @@ const Footer = () => {
                   </defs>
                 </svg>
               </a>
+              <a
+                href="https://www.tiktok.com/@montevida.pe"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok Social Link"
+                className="flex ease-out duration-200 hover:text-green-brand"
+              >
+                <svg
+                  className="fill-current"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+                </svg>
+              </a>
             </div>
             {/* <!-- Social Links end --> */}
           </div>
 
-          <div className="w-full sm:w-auto text-white">
-            <h2 className="mb-7.5 text-custom-1 font-medium text-white">
-              Mi Cuenta
-            </h2>
-
-            <ul className="flex flex-col gap-3.5">
-              <li>
-                <a className="ease-out duration-200 hover:text-green-brand text-white" href="#">
-                  Mi Cuenta
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-green-brand text-white" href="#">
-                  Iniciar Sesión / Registro
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-green-brand text-white" href="#">
-                  Carrito
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-green-brand text-white" href="#">
-                  Tienda
-                </a>
-              </li>
-            </ul>
-          </div>
 
           <div className="w-full sm:w-auto text-white">
             <h2 className="mb-7.5 text-custom-1 font-medium text-white">
@@ -187,28 +176,23 @@ const Footer = () => {
 
             <ul className="flex flex-col gap-3">
               <li>
-                <a className="ease-out duration-200 hover:text-green-brand text-white" href="#">
+                <a className="ease-out duration-200 hover:text-green-brand text-white" href="/terminos-y-condiciones">
+                  Términos y Condiciones
+                </a>
+              </li>
+              <li>
+                <a className="ease-out duration-200 hover:text-green-brand text-white" href="/politica-de-privacidad">
                   Política de Privacidad
                 </a>
               </li>
               <li>
-                <a className="ease-out duration-200 hover:text-green-brand text-white" href="#">
-                  Reembolsos
+                <a className="ease-out duration-200 hover:text-green-brand text-white" href="/politica-de-garantia">
+                  Política de Garantía
                 </a>
               </li>
               <li>
-                <a className="ease-out duration-200 hover:text-green-brand text-white" href="#">
-                  Términos de Uso
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-green-brand text-white" href="#">
-                  Preguntas Frecuentes
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-green-brand text-white" href="#">
-                  Contacto
+                <a className="ease-out duration-200 hover:text-green-brand text-white" href="/politica-de-envios">
+                  Política de Envíos
                 </a>
               </li>
             </ul>
@@ -222,9 +206,10 @@ const Footer = () => {
       {/* <!-- footer bottom start --> */}
       <div className="py-5 xl:py-7.5 border-t border-white/10">
         <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
-          <div className="flex gap-5 flex-wrap items-center justify-between text-white">
+          <div className="flex gap-5 flex-wrap items-center justify-center text-white">
             <p className="text-white font-medium opacity-80">
-              &copy; {year}. Todos los derechos reservados.
+              &copy; {year} Todos los derechos reservados{" "}
+              <a href="/" className="hover:text-green-brand duration-200">"MonteVida.Pe"</a>.
             </p>
 
             {/*

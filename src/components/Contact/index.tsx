@@ -58,7 +58,7 @@ const Contact = () => {
             <div className="xl:max-w-[370px] w-full bg-white rounded-xl shadow-1">
               <div className="py-5 px-4 sm:px-7.5 border-b border-gray-3">
                 <p className="font-medium text-xl text-dark">
-                  Monte Vida Perú
+                  MonteVida.Pe
                 </p>
               </div>
 
