@@ -1,18 +1,12 @@
 export const metadata = {
-    title: 'Sanity Studio',
-    description: 'Sanity Studio for Montevida',
+  title: 'Sanity Studio',
+  description: 'Sanity Studio for Montevida',
 }
 
 export default function StudioLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode
+  children: React.ReactNode
 }) {
-    return (
-        <html lang="en">
-            <body style={{ margin: 0 }}>
-                {children}
-            </body>
-        </html>
-    )
+  return <div style={{ margin: 0 }}>{children}</div>;
 }

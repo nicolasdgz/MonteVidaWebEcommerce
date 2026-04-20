@@ -11,11 +11,11 @@ import CartSidebarModal from "@/components/Common/CartSidebarModal";
 import { PreviewSliderProvider } from "../context/PreviewSliderContext";
 import PreviewSliderModal from "@/components/Common/PreviewSlider";
 import PageTransition from "@/components/Common/PageTransition";
-import AuthContext from "../context/AuthContext";
 
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PreLoader from "@/components/Common/PreLoader";
+import ContentProtection from "@/components/Common/ContentProtection";
 
 export default function ClientProviders({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState<boolean>(true);
@@ -28,13 +28,11 @@ export default function ClientProviders({ children }: { children: React.ReactNod
     <PreLoader />
   ) : (
     <>
-      <AuthContext>
-        <ReduxProvider>
+      <ReduxProvider>
         <CartModalProvider>
           <ModalProvider>
             <PreviewSliderProvider>
-              
-              {/* Organización JSON-LD */}
+
               <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -46,7 +44,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
                     logo: "https://www.montevida.pe/images/logo/LogoOficial-MonteVida-va.png",
                     contactPoint: {
                       "@type": "ContactPoint",
-                      telephone: "+51-999-999-999", // Cambiar por el real luego
+                      telephone: "+51-999-999-999",
                       contactType: "customer service",
                       areaServed: "PE",
                       availableLanguage: "es"
@@ -67,7 +65,7 @@ export default function ClientProviders({ children }: { children: React.ReactNod
           </ModalProvider>
         </CartModalProvider>
       </ReduxProvider>
-      </AuthContext>
+      <ContentProtection />
       <ScrollToTop />
       <WhatsAppButton />
       <Footer />

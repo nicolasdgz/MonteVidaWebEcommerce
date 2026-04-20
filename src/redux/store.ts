@@ -4,7 +4,6 @@ import storage from "redux-persist/lib/storage";
 
 import quickViewReducer from "./features/quickView-slice";
 import cartReducer from "./features/cart-slice";
-import wishlistReducer from "./features/wishlist-slice";
 import productDetailsReducer from "./features/product-details";
 
 import { TypedUseSelectorHook, useSelector } from "react-redux";
@@ -13,13 +12,12 @@ const persistConfig = {
   key: "montevida",
   version: 1,
   storage,
-  whitelist: ["cartReducer", "wishlistReducer"],
+  whitelist: ["cartReducer"],
 };
 
 const rootReducer = combineReducers({
   quickViewReducer,
   cartReducer,
-  wishlistReducer,
   productDetailsReducer,
 });
 

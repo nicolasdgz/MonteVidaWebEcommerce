@@ -115,7 +115,7 @@ const CartSidebarModal = () => {
                 onClick={closeCartModal}
                 className="w-full flex justify-center font-medium text-white bg-green-brand py-[13px] px-6 rounded-md transition-opacity duration-200 hover:opacity-90 focus:outline-2 focus:outline-offset-2 focus:outline-green-brand/60"
               >
-                Ir a Pagar
+                Ir a Comprar
               </Link>
             </div>
           </div>
